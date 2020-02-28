@@ -3,18 +3,21 @@ package school;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+enum Gender{
+    MALE,FEMALE
+}
 
 public class Student {
 
     String name;
     String surname;
-    String gender;
+    Gender gender;
     int age;
     ArrayList<Double> twoPreviousAverages;
     HashMap<String,Integer> notes;
 
 
-    public Student(String name, String surname, String gender, int age, ArrayList<Double> twoPreviousAverages, HashMap<String, Integer> notes) {
+    public Student(String name, String surname, Gender gender, int age, ArrayList<Double> twoPreviousAverages, HashMap<String, Integer> notes) {
         this.name = name;
         this.surname = surname;
         this.gender = gender;
@@ -31,7 +34,7 @@ public class Student {
         return surname;
     }
 
-    public String getGender() {
+    public Gender getGender() {
         return gender;
     }
 

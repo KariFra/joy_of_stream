@@ -55,10 +55,10 @@ public class TestSuite {
         fourNotes.put("Physics", 4);
         fourNotes.put("English", 5);
 
-        Student studentOne = new Student("John", "Snow", "male", 20, averageOne, oneNotes);
-        Student studentTwo = new Student("Marry", "Watt", "female", 21, averageTwo, twoNotes);
-        Student studentThree = new Student("Jack", "Nicholson", "male", 19, averageThree, threeNotes);
-        Student studentFour = new Student("Vera", "May", "female", 20, averageFour, fourNotes);
+        Student studentOne = new Student("John", "Snow", Gender.MALE, 20, averageOne, oneNotes);
+        Student studentTwo = new Student("Marry", "Watt", Gender.FEMALE, 21, averageTwo, twoNotes);
+        Student studentThree = new Student("Jack", "Nicholson", Gender.MALE, 19, averageThree, threeNotes);
+        Student studentFour = new Student("Vera", "May", Gender.FEMALE, 20, averageFour, fourNotes);
 
         ArrayList<Student> membersA = new ArrayList<>();
         membersA.add(studentOne);
@@ -95,7 +95,7 @@ public class TestSuite {
 //        Najlepsza meska ocena z matematyki
 
         Optional bestMathNote = groupOne.getGroups().stream()
-                .filter(e -> e.getGender().equals("male"))
+                .filter(e -> e.getGender().equals(Gender.MALE))
                 .flatMap(e -> e.notes.entrySet().stream())
                 .filter(f -> f.getKey().equals("Math"))
                 .max(Comparator.comparing(Map.Entry::getValue));
@@ -107,7 +107,7 @@ public class TestSuite {
 //       Najgorsza żenska ocena
 
         groupOne.getGroups().stream()
-                .filter(e -> e.getGender().equals("Female"))
+                .filter(e -> e.getGender().equals(Gender.FEMALE))
                 .flatMap(e -> e.notes.entrySet().stream())
                 .map(o->o.getValue())
                 .min(Double::compare)
