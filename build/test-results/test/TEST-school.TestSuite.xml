@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="school.TestSuite" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-02-28T16:59:37" hostname="ISWA20-HIWI2" time="0.024">
+  <properties/>
+  <testcase name="streamTest" classname="school.TestSuite" time="0.024"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
