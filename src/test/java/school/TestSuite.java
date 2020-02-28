@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class TestSuite {
 
@@ -112,6 +113,11 @@ public class TestSuite {
                 .map(o->o.getValue())
                 .min(Double::compare)
                 .ifPresent(System.out::println);
+
+// suma średnich w grupie
+        groupOne.getGroups().stream()
+                .flatMap(e-> e.getTwoPreviousAverages().stream())
+                .collect(Collectors.summingDouble(o-> o.doubleValue()));
 
 
 
